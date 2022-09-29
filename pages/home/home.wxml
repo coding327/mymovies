@@ -1,0 +1,21 @@
+<view class="film">
+    <!-- 显示loading正在加载【数据还没请求到】 -->
+    <include wx:if="{{ types.length === 0 }}" src="/templates/loading/loading"/>
+
+    <!-- 类别有三个，循环三次即可 -->
+    <view class="film-type" wx:for="{{ types }}" wx:key="index">
+        <!-- 分类标题 start -->
+        <view class="type-title">
+            <text>{{ item.title }}</text>
+            <navigator url="/pages/list/list?method={{ item.method }}">更多 ></navigator>
+        </view>
+        <!-- 分类标题 end -->
+        <!-- 电影列表 start -->
+        <!-- 替换横向滚动组件，并指定scroll-x -->
+        <scroll-view class="film-list" scroll-x>
+            <!-- 组件调用 -->
+            <film-item class="film-item" wx:for="{{ item.list }}" film="{{ item }}" wx:key="index"></film-item>
+        </scroll-view>
+        <!-- 电影列表 end -->
+    </view>
+</view>

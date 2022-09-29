@@ -1,0 +1,26 @@
+/* components/film-item/film-item.wxss */
+.film-img {
+    width: 100%;
+    height: 280rpx;
+}
+.film-name {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #333;
+    /* 对于较长的电影名称进行处理 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.film-star {
+    width: 100%;
+}
+.film-star .star-img {
+    width: 20rpx;
+    height: 20rpx;
+}
+.film-star .film-source {
+    font-size: 20rpx;
+    color: #999;
+    padding-left: 8rpx;
+}

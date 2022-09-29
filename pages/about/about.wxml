@@ -1,0 +1,25 @@
+<!--pages/about/about.wxml-->
+<view class="about">
+    <!-- 用户信息 start -->
+    <view class="userinfo">
+        <image class="user-img" src="{{ userInfo.avatarUrl || '/imgs/user.png' }}"></image>
+        <!-- 昵称默认没授权就不显示 -->
+        <view wx:if="{{ userInfo }}" class="user-nickname">{{ userInfo.nickName }}</view>
+        <!-- plain镂空 -->
+        <button wx:else class="login" plain bindtap="getUserProfile">点击授权登陆</button>
+    </view>
+    <!-- 用户信息 end -->
+
+    <!-- 我的收藏 start -->
+    <view class="favorite">
+        <view class="favorite-title">我的收藏</view>
+        <view class="favorite-list">
+            <view class="favorite-item" wx:for="{{ favorites }}" wx:key="index">
+                <film-item film="{{ item }}"></film-item>
+                <button class="delete" size="mini" plain type="warn" bindtap="deleteFavorite" data-id="{{ index }}">删除</button>
+            </view>
+        </view>
+        <view wx:if="{{ showNoFavorite }}" class="favorite-no">~~暂无收藏~~</view>
+    </view>
+    <!-- 我的收藏 end -->
+</view>

@@ -1,0 +1,15 @@
+.loading {
+    width: 100%;
+    text-align: center;
+    margin-top: 40rpx;
+}
+
+.loading image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.loading view {
+    font-size: 22rpx;
+    color: #333;
+}

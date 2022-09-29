@@ -1,0 +1,144 @@
+/* pages/detail/detail.wxss */
+.detail {
+    width: 100%;
+}
+/* 电影标题 */
+.film-title {
+    position: relative;
+    height: 300rpx;
+    margin-bottom: 60rpx;
+}
+.film-bg {
+    height: 300rpx;
+    overflow: hidden;
+}
+.film-bg image {
+    width: 100%;
+}
+.film-bg .shadow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0 , 0, .6); */
+    /* 不用rgba或者下面这种 */
+    background: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+.film-info {
+    position: absolute;
+    top: 100rpx;
+    left: 30rpx;
+    z-index: 999;
+    height: 250rpx;
+    display: flex;
+    color: white;
+}
+.film-info image {
+    width: 240rpx;
+    height: 100%;
+}
+.film-info .title {
+    font-size: 32rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+}
+.film-info .source {
+    font-size: 28rpx;
+}
+
+/* 电影介绍 */
+.film-intro {
+    margin: 10rpx 0;    
+}
+.film-intro .content {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    padding: 12rpx 20rpx;
+}
+.film-intro .content text:first-child {
+    color: #42bd56;
+    font-weight: bold;
+}
+/* 让按钮居中 */
+.film-intro .favorite {
+    display: block;
+    width: 50%;
+    letter-spacing: 20rpx;
+    margin-top: 20rpx;
+}
+
+/* 电影演员 */
+.film-actor {
+    margin: 10rpx 0;
+}
+.actor-title,.comment-title {
+    font-size: 30rpx;
+    color: #333;
+    border-left: 6rpx solid #42bd56;
+    border-bottom: 2rpx solid #ccc;
+    padding: 10rpx 20rpx;
+    margin-bottom: 10rpx;
+}
+.actor-list {
+    width: 100%;
+    white-space: nowrap;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}
+.actor-item {
+    display: inline-block;
+    width: 160rpx;
+    padding: 0 10rpx;
+}
+.actor-item .actor-img {
+    width: 100%;
+    height: 220rpx;
+}
+.actor-item .actor-name {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 电影评论 */
+.film-comment {
+    margin: 10rpx 0;
+}
+.comment-item {
+    display: flex;
+}
+.comment-item .left {
+    width: 100rpx;
+    margin: 10rpx 0;
+    text-align: center;
+}
+.comment-item .left .user-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.comment-item .right {
+    flex: 1;
+    margin: 20rpx;
+    border-bottom: 2rpx solid #ccc;
+    padding-bottom: 20rpx;
+}
+.comment-item .right view {
+    font-size: 24rpx;
+    margin-bottom: 10rpx;
+}
+.comment-item .right .name {
+    font-size: 26rpx;
+}
+.comment-item .right .time {
+    color: #999;
+}
+.comment-item .right .content {
+    color: #333;
+}
+

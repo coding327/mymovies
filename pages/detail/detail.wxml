@@ -1,0 +1,82 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+    <!-- 电影标题 start -->
+    <view class="film-title">
+        <view class="film-bg">
+        <!-- 解释一下这里的mode，意思是width固定，height不固定，但是长宽比例不变 -->
+            <image src="{{ film.pic.normal }}" mode="widthFix"></image>
+            <view class="shadow"></view>
+        </view>
+        <view class="film-info">
+        <!-- 解释一下这里的mode，意思是高度固定，同时图片也能完整显示出来 -->
+            <image src="{{ film.pic.normal }}" mode="aspectFit"></image>
+            <view>
+                <view class="title">{{ film.title }}</view>
+                <view class="source">{{ film.rating.value }}分 {{ film.rating.count }}人评价</view>
+            </view>
+        </view>
+    </view>
+    <!-- 电影标题 -->
+
+    <!-- 电影介绍 start -->
+    <view class="film-intro">
+        <view class="content">
+            <text>电影简介：</text>
+            <text>{{ film.card_subtitle }}</text>
+        </view>
+        <view class="content">
+            <text>首映时间：</text>
+            <!-- 注意pubdate是个数组，但是只有一个元素，放这里它会自动遍历的，这里不需要加下标取出里面的元素 -->
+            <text>{{ film.pubdate }}</text>
+        </view>
+        <view class="content">
+            <text>剧情介绍：</text>
+            <text>{{ film.intro }}</text>
+        </view>
+        <view>
+        <!-- size选择mini，类型为红色选择warn，由于有边框选择plain -->
+            <button class="favorite" size="mini" type="warn" plain bindtap="addFavorite">收藏</button>
+        </view>
+    </view>
+    <!-- 电影介绍 end -->
+
+    <!-- 电影演员 start -->
+    <view class="film-actor">
+        <view class="actor-title">
+            <text>演员：</text>
+        </view>
+        <!-- 影院列表它是能够水平滚动起来的，使用scroll-view组并设置scroll-x -->
+        <scroll-view class="actor-list" scroll-x>
+        <!-- wx:for-item="actor"就是给数组里的每个item起别名为actor，不写这个默认使用item也可以 -->
+            <view class="actor-item" wx:for="{{ film.actors }}" wx:for-item="actor" wx:key="index">
+                <image class="actor-img" src="/imgs/actor.jpg"></image>
+                <view class="actor-name">{{ actor.name }}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 电影演员 end -->
+
+    <!-- 电影评论 start -->
+    <view class="film-comment">
+        <view class="comment-title">
+            <text>评论：</text>
+        </view>
+        <view class="comment-item" wx:for="{{ comments }}" wx:for-item="comment" wx:key="index">
+            <view class="left">
+                <image class="user-img" src="{{ comment.user.avatar }}"></image>
+            </view>
+            <view class="right">
+                <view class="name">{{ comment.user.name }}</view>
+                <view class="time">{{ comment.create_time }}</view>
+                <view class="content">{{ comment.comment }}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 电影评论 end -->
+
+    <!-- 显示loading正在加载 -->
+    <include wx:if="{{ showLoading }}" src="/templates/loading/loading" />
+
+    <!-- 显示nomore没有更多数据 -->
+    <include wx:if="{{ showNomore }}" src="/templates/nomore/nomore" />
+</view>

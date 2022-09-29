@@ -1,0 +1,6 @@
+.nomore {
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+    padding-bottom: 24rpx;
+}

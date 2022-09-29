@@ -1,0 +1,25 @@
+<!--components/film-item/film-item.wxml-->
+<!-- <view> -->
+<!-- 替换为navigator -->
+<navigator url="/pages/detail/detail?filmId={{ film.id }}">
+    <!-- <image class="film-img" src="/imgs/film.jpg"></image> -->
+    <!-- <view class="film-name">美丽人生</view>
+    <view class="film-star">
+        <image class="star-img" src="/imgs/star-open.png" wx:for="{{ 5 }}" wx:key="index"></image>
+        <text class="film-source">9.5</text>
+    </view> -->
+
+    <!-- 使用传递过来数据 -->
+    <image class="film-img" src="{{ film.cover.url }}"></image>
+    <view class="film-name">{{ film.title }}</view>
+    <view class="film-star">
+    <!-- 星级评分展示处理，十分制，8<8.2图片亮的给4个 -->
+        <image class="star-img" src="{{ tools.starImg(index,film.rating.value) }}" wx:for="{{ 5 }}" wx:key="index"></image>
+        <text class="film-source">{{ film.rating.value }}</text>
+    </view>
+<!-- </view> -->
+<!-- 替换为navigator -->
+</navigator>
+
+<!-- 模块名叫tools，随便取 -->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>

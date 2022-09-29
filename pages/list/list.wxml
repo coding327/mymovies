@@ -1,0 +1,21 @@
+<!--pages/list/list.wxml-->
+<view>
+    <view class="list-type">
+        <view class="type-title">
+            <!-- <text>近期热门电影</text> -->
+            <!-- 替换为数据仓库中的数据 -->
+            <text>{{ films.title }}</text>
+        </view>
+        <view class="film-list">
+            <!-- <film-item class="film-item" wx:for="{{ 12 }}" wx:key="index"></film-item> -->
+            <!-- 替换为数据仓库中的数据，同时film-item组件还需要传递值过去，item即为电影列表中的每一项 -->
+            <film-item class="film-item" wx:for="{{ films.list }}" film="{{ item }}" wx:key="index"></film-item>
+        </view>
+    </view>
+
+    <!-- 显示loading正在加载 -->
+    <include wx:if="{{ showLoading }}" src="/templates/loading/loading" />
+
+    <!-- 显示nomore没有更多数据 -->
+    <include wx:if="{{ showNomore }}" src="/templates/nomore/nomore" />
+</view>

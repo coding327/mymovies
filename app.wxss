@@ -1,0 +1,9 @@
+/* 全局导入loading */
+@import "/templates/loading/loading.wxss";
+/* 全局导入nomore */
+@import "/templates/nomore/nomore.wxss";
+
+page {
+    background-color: #efefef;
+}
+

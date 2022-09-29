@@ -1,0 +1,14 @@
+// 定义一个函数对评分进行处理
+
+// 参数1星星的序号
+// 参数2评分
+function starImg(index, source) {
+    return (index+1)*2 <= source ? '/imgs/star-open.png' : '/imgs/star-close.png'
+}
+
+// 函数导出
+module.exports = {
+    // 注意这里不能简写，变量也不行，wxs
+    starImg: starImg
+}
+

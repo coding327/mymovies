@@ -1,0 +1,38 @@
+/* pages/list/list.wxss */
+.list {
+    width: 100%;
+}
+
+.list-type {
+    background-color: white;
+    margin-bottom: 20rpx;
+}
+
+/* 分类标题 */
+.type-title {
+    padding: 26rpx 0;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+}
+.type-title text {
+    border-left: 6rpx solid #42bd56;
+    padding-left: 26rpx;
+}
+
+/* 电影列表 */
+.film-list {
+    width: 100%;
+    padding: 0 12rpx;
+    box-sizing: border-box;
+}
+.film-item {
+    display: inline-block;
+    width: 33.33%;
+    padding: 0 12rpx;
+    box-sizing: border-box;
+}
+
+
+
+

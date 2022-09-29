@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/detail/detail",
+        "pages/list/list",
+        "pages/about/about"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#42bd56",
+        "navigationBarTitleText": "movie",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "/imgs/film-close.png",
+                "selectedIconPath": "/imgs/film-open.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "关于",
+                "iconPath": "/imgs/me-close.png",
+                "selectedIconPath": "/imgs/me-open.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "film-item": "/components/film-item/film-item"
+    }
+}
