@@ -1,1 +1,10 @@
-# 超千字的详细解析，直接上手小程序实战带你入门小程序
+<h1 align="center">Welcome to mymovies 👋</h1>
+<p>
+</p>
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
